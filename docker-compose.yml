@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  nginx:
+    image: library/nginx:alpine
+    ports:
+      - 80:80
+    networks:
+      - app
+
+networks:
+  app:
