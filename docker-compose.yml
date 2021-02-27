@@ -17,5 +17,15 @@ services:
     networks:
       - app
 
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secret'
+      MYSQL_DATABASE: 'example'
+    ports:
+      - 3306:3306
+    networks:
+      - app
+
 networks:
   app:
