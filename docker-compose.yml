@@ -6,7 +6,7 @@ services:
     ports:
       - 80:80
     volumes:
-    - ./:/app
+      - ./:/app
     networks:
       - app
 
@@ -24,6 +24,11 @@ services:
       MYSQL_DATABASE: 'example'
     ports:
       - 3306:3306
+    networks:
+      - app
+
+  redis:
+    image: library/redis:alpine
     networks:
       - app
 
