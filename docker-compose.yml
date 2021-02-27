@@ -2,9 +2,18 @@ version: '2'
 
 services:
   nginx:
-    image: library/nginx:alpine
+    build: docker/nginx
     ports:
       - 80:80
+    volumes:
+    - ./:/app
+    networks:
+      - app
+
+  php:
+    build: docker/php
+    volumes:
+      - ./:/app
     networks:
       - app
 
