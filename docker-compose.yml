@@ -22,6 +22,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'secret'
       MYSQL_DATABASE: 'example'
+    volumes:
+      - mysql:/var/lib/mysql
     ports:
       - 3306:3306
     networks:
@@ -31,6 +33,9 @@ services:
     image: library/redis:alpine
     networks:
       - app
+
+volumes:
+  mysql:
 
 networks:
   app:
